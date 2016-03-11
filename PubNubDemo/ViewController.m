@@ -16,6 +16,7 @@ static NSString *const ChannelKey = @"test_channel_pubnub";
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (strong, nonatomic) PubNub *client;
 @property (strong, nonatomic) NSString *uuid;
+@property (weak, nonatomic) IBOutlet UITextView *historyTextView;
 
 @end
 
@@ -38,7 +39,7 @@ static NSString *const ChannelKey = @"test_channel_pubnub";
 
 - (IBAction)sendButtonTapped:(id)sender {
     
-    [self.client publish: [NSString stringWithFormat: @"Message:%@ from:%@",self.messageTextField.text , self.uuid] toChannel:ChannelKey
+    [self.client publish: [NSString stringWithFormat: @"Message:%@ \nfrom: %@" ,self.messageTextField.text, self.client.uuid] toChannel:ChannelKey
           withCompletion:^(PNPublishStatus *status) {
               
               // Check whether request successfully completed or not.
@@ -73,7 +74,7 @@ static NSString *const ChannelKey = @"test_channel_pubnub";
         // Message has been received on channel stored in
         // message.data.subscribedChannel
     }
-    self.messageLabel.text = [NSString stringWithFormat:@"Received message: %@ on channel %@ at %@", message.data.message,
+    self.messageLabel.text = [NSString stringWithFormat:@"%@ \non channel %@ \nat %@", message.data.message,
                               message.data.subscribedChannel, message.data.timetoken ];
     NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
           message.data.subscribedChannel, message.data.timetoken);
@@ -91,7 +92,7 @@ static NSString *const ChannelKey = @"test_channel_pubnub";
         // Or just use the connected event to confirm you are subscribed for
         // UI / internal notifications, etc
         
-        [self.client publish: [NSString stringWithFormat: @"Hello from the iOS: %@", self.uuid] toChannel:ChannelKey
+        [self.client publish:@"Hello from the iOS" toChannel:ChannelKey
               withCompletion:^(PNPublishStatus *status) {
                   
                   // Check whether request successfully completed or not.
@@ -120,6 +121,15 @@ static NSString *const ChannelKey = @"test_channel_pubnub";
         // encrypt messages and on live data feed it received plain text.
     }
     
+}
+
+- (IBAction)historyButtonAction:(id)sender {
+    [self.client historyForChannel: ChannelKey withCompletion:^(PNHistoryResult * _Nullable result, PNErrorStatus * _Nullable status) {
+        for (NSString *message in result.data.messages) {
+            self.historyTextView.text = [self.historyTextView.text stringByAppendingString:[NSString stringWithFormat:@"\n%@",message]];
+        }
+        
+    }];
 }
 
 @end
