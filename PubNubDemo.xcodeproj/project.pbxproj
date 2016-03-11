@@ -13,7 +13,6 @@
 		15D52F9F1C91B2B100E05C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D52F9D1C91B2B100E05C30 /* Main.storyboard */; };
 		15D52FA11C91B2B100E05C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D52FA01C91B2B100E05C30 /* Assets.xcassets */; };
 		15D52FA41C91B2B100E05C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D52FA21C91B2B100E05C30 /* LaunchScreen.storyboard */; };
-		15D52FAD1C91B7EE00E05C30 /* PubNubManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D52FAC1C91B7EE00E05C30 /* PubNubManager.m */; };
 		67C9335893340F6EFAC6F8F2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD8A2866D392E82FA8FABE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +28,6 @@
 		15D52FA01C91B2B100E05C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15D52FA31C91B2B100E05C30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15D52FA51C91B2B100E05C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15D52FAB1C91B7EE00E05C30 /* PubNubManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubNubManager.h; sourceTree = "<group>"; };
-		15D52FAC1C91B7EE00E05C30 /* PubNubManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubNubManager.m; sourceTree = "<group>"; };
 		55AD8A2866D392E82FA8FABE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EFC57C78F6F6D906F5F192 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,8 +86,6 @@
 				15D52F981C91B2B100E05C30 /* AppDelegate.m */,
 				15D52F9A1C91B2B100E05C30 /* ViewController.h */,
 				15D52F9B1C91B2B100E05C30 /* ViewController.m */,
-				15D52FAB1C91B7EE00E05C30 /* PubNubManager.h */,
-				15D52FAC1C91B7EE00E05C30 /* PubNubManager.m */,
 				15D52F9D1C91B2B100E05C30 /* Main.storyboard */,
 				15D52FA01C91B2B100E05C30 /* Assets.xcassets */,
 				15D52FA21C91B2B100E05C30 /* LaunchScreen.storyboard */,
@@ -230,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				15D52F9C1C91B2B100E05C30 /* ViewController.m in Sources */,
-				15D52FAD1C91B7EE00E05C30 /* PubNubManager.m in Sources */,
 				15D52F991C91B2B100E05C30 /* AppDelegate.m in Sources */,
 				15D52F961C91B2B100E05C30 /* main.m in Sources */,
 			);
